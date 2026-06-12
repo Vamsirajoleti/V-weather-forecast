@@ -38,4 +38,4 @@ V-Weather/
     └── images/
 ```
 
-Developed as a modern, beginner-friendly UI/UX Mini Project.
+Developed as a modern, beginner-friendly UI/UX Mini Project. ~Vamsi Raju Oleti
