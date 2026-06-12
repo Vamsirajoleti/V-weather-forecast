@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Weather Forecast</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header & Navigation -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun-rain"></i>
+                <span>V-Weather</span>
+            </div>
+            
+            <div class="search-bar">
+                <form id="search-form">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Search any city..." autocomplete="off">
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
+            </div>
+
+            <div class="controls">
+                <button id="location-btn" class="icon-btn" title="Current Location">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                </button>
+                <div class="unit-toggle">
+                    <button id="unit-c" class="unit-btn active">°C</button>
+                    <button id="unit-f" class="unit-btn">°F</button>
+                </div>
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dynamic States (Loading / Error) -->
+        <div id="loader" class="state-container hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+        
+        <div id="error-container" class="state-container hidden">
+            <i class="fa-solid fa-circle-exclamation error-icon"></i>
+            <p id="error-msg">City not found.</p>
+            <button id="retry-btn" class="primary-btn">Try Again</button>
+        </div>
+
+        <!-- Main Dashboard -->
+        <main id="dashboard" class="dashboard hidden">
+            
+            <!-- Top Section: Current Weather & Details -->
+            <div class="top-section">
+                <!-- Current Weather Hero -->
+                <div class="card hero-card glass-effect">
+                    <div class="hero-header">
+                        <div class="location-info">
+                            <h1 id="city-name">--</h1>
+                            <p id="country-name" class="text-muted">--</p>
+                        </div>
+                        <div class="date-info" id="current-date">--</div>
+                    </div>
+                    
+                    <div class="hero-body">
+                        <div class="temp-container">
+                            <h2 id="current-temp">--°</h2>
+                            <p id="weather-desc" class="weather-desc">--</p>
+                        </div>
+                        <div class="icon-container">
+                            <img id="current-icon" src="" alt="Weather Icon" class="floating">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather Details Grid -->
+                <div class="details-grid">
+                    <div class="card detail-card glass-effect hover-lift">
+                        <i class="fa-solid fa-temperature-half detail-icon"></i>
+                        <p class="detail-label">Feels Like</p>
+                        <h3 id="feels-like" class="detail-value">--°</h3>
+                    </div>
+                    <div class="card detail-card glass-effect hover-lift">
+                        <i class="fa-solid fa-droplet detail-icon"></i>
+                        <p class="detail-label">Humidity</p>
+                        <h3 id="humidity" class="detail-value">--%</h3>
+                    </div>
+                    <div class="card detail-card glass-effect hover-lift">
+                        <i class="fa-solid fa-wind detail-icon"></i>
+                        <p class="detail-label">Wind Speed</p>
+                        <h3 id="wind-speed" class="detail-value">-- km/h</h3>
+                    </div>
+                    <div class="card detail-card glass-effect hover-lift">
+                        <i class="fa-solid fa-eye detail-icon"></i>
+                        <p class="detail-label">Visibility</p>
+                        <h3 id="visibility" class="detail-value">-- km</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Section: 24-Hour Forecast -->
+            <div class="section-container">
+                <h3 class="section-title">24-Hour Forecast</h3>
+                <div class="card glass-effect forecast-container">
+                    <div id="hourly-forecast" class="hourly-scroll">
+                        <!-- Injected via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: 7-Day Forecast -->
+            <div class="section-container">
+                <h3 class="section-title">7-Day Forecast</h3>
+                <div class="card glass-effect forecast-container">
+                    <div id="daily-forecast" class="daily-grid">
+                        <!-- Injected via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
