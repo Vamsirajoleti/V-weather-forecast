@@ -2,7 +2,7 @@
 
 V-Weather Forecast is a modern, premium weather dashboard built with Vanilla JavaScript, HTML5, and CSS3. It fetches real-time data using the free Open-Meteo API and features a beautiful glassmorphism design.
 
-​🌐 Live Demo: https://vamsirajoleti.github.io/V-weather-forecast/
+​🌐 Live Demo: https://vamsi-raju-oleti.github.io/V-weather-forecast/
 
 ## 🚀 Features
 - **Search Any City**: Instantly view weather worldwide.
